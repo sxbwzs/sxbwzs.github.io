@@ -1,1 +1,5 @@
-
+Manifest-Version: 1.0
+Implementation-Title: Baiwang Smart Tax Official Website
+Implementation-Version: 1.0.0
+Implementation-Vendor: Shaanxi Baiwang Smart Tax Digital Technology Co., Ltd.
+Created-By: WorkBuddy
