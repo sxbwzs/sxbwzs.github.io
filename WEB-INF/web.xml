@@ -1,1 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  陕西百旺智税数字科技有限公司官网 — Tomcat 部署描述符
 
+  版本说明：
+  web.xml 的 version 必须 <= 容器的 Servlet 版本，写错会导致应用直接部署失败。
+  本站为纯静态站点，用不到更高版本才有的特性，因此选 3.1 —— 兼容区间最宽，
+  可覆盖 Tomcat 8.0 / 8.5 / 9 / 10 / 10.1 / 11 全线。
+  对应的命名空间是 http://xmlns.jcp.org/xml/ns/javaee（Servlet 4.0 起才改为 jakartaee）。
+-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>陕西百旺智税数字科技有限公司官网</display-name>
+  <description>财税信息化与财税代理与合规双线业务官网（纯静态站点）</description>
+
+  <!-- 欢迎页：按顺序尝试，命中即返回 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!--
+    静态资源的 MIME 类型。
+    Tomcat 自带的 conf/web.xml 已经覆盖了常见类型，这里补充几项保证兼容性，
+    避免个别精简版容器缺少映射时资源以 application/octet-stream 返回。
+  -->
+  <mime-mapping>
+    <extension>webp</extension>
+    <mime-type>image/webp</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>avif</extension>
+    <mime-type>image/avif</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>svg</extension>
+    <mime-type>image/svg+xml</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>webmanifest</extension>
+    <mime-type>application/manifest+json</mime-type>
+  </mime-mapping>
+
+  <!--
+    缓存策略（Tomcat 自带的 ExpiresFilter）。
+
+    HTML 不缓存：改内容后用户刷新即可看到最新版本。
+    CSS / JS 缓存 7 天，图片缓存 30 天：减少重复请求。
+
+    ⚠️ 副作用：更新 style.css 或 main.js 后，老用户浏览器可能仍在使用缓存副本。
+       解决办法是给资源加版本号，例如：
+         <link rel="stylesheet" href="assets/css/style.css?v=2">
+         <script src="assets/js/main.js?v=2"></script>
+       每次改动递增版本号即可让浏览器重新拉取。
+
+    ⚠️ 兼容性：若目标容器不是原版 Tomcat（部分国产中间件未打包 catalina 的 filters），
+       启动会报 ClassNotFoundException: org.apache.catalina.filters.ExpiresFilter。
+       此时把下面 <filter> 与 <filter-mapping> 两段整体删除即可，站点功能完全不受影响。
+  -->
+  <filter>
+    <filter-name>ExpiresFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.ExpiresFilter</filter-class>
+    <init-param>
+      <param-name>ExpiresByType text/html</param-name>
+      <param-value>access plus 0 seconds</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType text/css</param-name>
+      <param-value>access plus 7 days</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType application/javascript</param-name>
+      <param-value>access plus 7 days</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType text/javascript</param-name>
+      <param-value>access plus 7 days</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType image/svg+xml</param-name>
+      <param-value>access plus 30 days</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType image</param-name>
+      <param-value>access plus 30 days</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ExpiresByType font</param-name>
+      <param-value>access plus 30 days</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ExpiresFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+
+  <!--
+    错误页。
+    注意：Tomcat 的 error-page 是「内部转发」，浏览器地址栏仍停留在原始错误地址，
+    因此 404.html 的样式与图标必须全部内联，不依赖任何外部资源。
+  -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.html</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/404.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/404.html</location>
+  </error-page>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+</web-app>
