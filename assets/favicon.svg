@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="百旺智税">
+  <defs>
+    <linearGradient id="bwz" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B4DE4"/>
+      <stop offset="1" stop-color="#0E9B8E"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#bwz)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round">
+    <path d="M8.6 11.4h7.2"/>
+    <path d="M8.6 16h9.6"/>
+    <path d="M8.6 20.6h5.4"/>
+  </g>
+  <path d="M20.4 11.6l3.3 3.5-3.3 3.5" fill="none" stroke="#9BF0E2"
+        stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23.7 15.1v5.5" fill="none" stroke="#9BF0E2"
+        stroke-width="2.1" stroke-linecap="round"/>
+</svg>
