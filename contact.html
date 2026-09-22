@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>联系我们 — 预约财税顾问｜陕西百旺智税数字科技有限公司</title>
+<meta name="description" content="预约陕西百旺智税数字科技有限公司的财税顾问。选择财税信息化或财税代理与合规，提交需求后由顾问在 1 个工作日内联系。陕西西安总部与多地服务网点。">
+<meta name="theme-color" content="#08132B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="陕西百旺智税数字科技有限公司">
+<meta property="og:title" content="联系我们 — 预约财税顾问">
+<meta property="og:description" content="选择你需要的业务线，留下需求，由顾问在 1 个工作日内联系。">
+<meta property="og:image" content="https://sxbwzs.github.io/assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ============================================================
+   联系页本次优化增强（不改动全站 style.css）
+   ============================================================ */
+
+/* --- Hero：左文右图双栏 --- */
+.contact-hero .page-hero-inner {
+  max-width: none;
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 56px;
+  align-items: center;
+  padding: 76px 0 88px;
+}
+.contact-hero-media { position: relative; }
+.contact-hero-media img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: var(--sh-lg);
+}
+.contact-hero-badge {
+  position: absolute;
+  left: 18px;
+  bottom: -18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--c-ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-md);
+}
+.contact-hero-badge .live-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--c-ok);
+  box-shadow: 0 0 0 4px var(--c-ok-l);
+  flex: none;
+}
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 28px;
+}
+.hero-points span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  color: var(--c-on-dark);
+}
+.hero-points svg { width: 18px; height: 18px; color: #6FD6C8; flex: none; }
+
+/* --- 联系侧栏品牌信任卡 --- */
+.brand-card {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  box-shadow: var(--sh-sm);
+  margin-bottom: 20px;
+  background: #fff;
+}
+.brand-card-img { position: relative; }
+.brand-card-img img { width: 100%; height: 188px; object-fit: cover; }
+.brand-card-img::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,19,43,0) 50%, rgba(8,19,43,.55) 100%);
+}
+.brand-card-tag {
+  position: absolute;
+  left: 14px; bottom: 12px;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  display: flex; align-items: center; gap: 7px;
+}
+.brand-card-tag::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: #6FD6C8;
+}
+.brand-card-body { padding: 18px 20px 20px; }
+.brand-card-body b { display: block; font-size: 16px; color: var(--c-ink); margin-bottom: 6px; }
+.brand-card-body p { font-size: 13.5px; line-height: 1.75; color: var(--c-mut); }
+
+/* --- 表单分组小标题 --- */
+.form-group-title {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 2px;
+  padding-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-ink);
+}
+.form-group-title::before {
+  content: "";
+  width: 4px; height: 16px;
+  border-radius: 2px;
+  background: var(--c-pri);
+}
+.form-group-title.is-sec::before { background: var(--c-sec); }
+.form-group-title small { font-weight: 400; color: var(--c-mut-2); font-size: 12.5px; }
+
+/* --- 服务网点：总部信息 + 地图 规整并排 --- */
+.branch-panel {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.branch-info { display: flex; flex-direction: column; gap: 14px; }
+.branch-info .note-text {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--c-bg-soft);
+  border-radius: var(--r-sm);
+  font-size: 13.5px;
+  color: var(--c-mut);
+  line-height: 1.7;
+}
+.map-wrap {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  box-shadow: var(--sh-sm);
+  background: #fff;
+}
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
+}
+.map-credit { font-size: 12px; color: var(--c-mut-2); margin-top: 8px; }
+
+/* --- 公司展示：宣传片视频 + 图片网格 --- */
+.company-video {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-md);
+  border: 1px solid var(--c-line);
+  margin-bottom: 20px;
+  aspect-ratio: 16 / 9;
+  background: var(--c-dark);
+}
+.company-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.company-grid figure {
+  margin: 0;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  background: #fff;
+  box-shadow: var(--sh-xs);
+}
+.company-grid img { width: 100%; height: 160px; object-fit: cover; }
+.company-grid figcaption {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--c-mut);
+  border-top: 1px solid var(--c-line);
+}
+
+/* --- 响应式 --- */
+@media (max-width: 900px) {
+  .contact-hero .page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 48px 0 64px;
+  }
+  .contact-hero-media img { height: 230px; }
+  .contact-hero-badge { position: static; margin-top: 14px; display: inline-flex; }
+  .branch-panel { grid-template-columns: 1fr; }
+  .map-wrap iframe { min-height: 300px; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-note">
+      <span class="topbar-dot" aria-hidden="true"></span>
+      首次沟通不收费 · 无购买条件 · 1 个工作日内回复
+    </span>
+    <span class="topbar-links">
+      <a href="index.html">返回首页</a>
+      <a href="tel:02988446807" class="topbar-tel">029-88446807</a>
+    </span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/favicon.svg" alt="" width="40" height="40">
+      <span class="brand-text">
+        <span class="brand-name">百旺智税</span>
+        <span class="brand-sub">Baiwang Smart Tax</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <a class="nav-link" href="index.html">首页</a>
+      <a class="nav-link" href="solutions.html">财税信息化</a>
+      <a class="nav-link is-sec" href="agency.html">财税代理与合规</a>
+      <a class="nav-link" href="about.html">关于我们</a>
+      <a class="nav-link is-active" href="contact.html" aria-current="page">联系我们</a>
+      <div class="nav-mobile-cta">
+        <a class="btn btn-primary btn-block" href="#form">了解财税信息化</a>
+        <a class="btn btn-sec btn-block" href="#form">了解代理记账</a>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="#branches">服务网点</a>
+      <a class="btn btn-primary btn-sm" href="#form">联系我们</a>
+    </div>
+
+    <button class="nav-toggle js-nav-toggle" type="button"
+            aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav">
+      <svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 页面 Hero：左文右图 ============ -->
+<section class="page-hero is-sec contact-hero">
+  <div class="container page-hero-inner">
+    <div>
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a>
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">联系我们</span>
+      </nav>
+
+      <h1>认识百旺智税，找到对的财税帮手</h1>
+
+      <p>
+        深耕西安的财税信息化与代理合规团队。先看一段短片和我们的工作场景，
+        右侧留了电话、邮箱与总部地址，随时联系，首次沟通不收费。
+      </p>
+
+      <div class="hero-points">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          首次沟通不收费
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          先判断问题，不硬推方案
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          1 个工作日内回复
+        </span>
+      </div>
+    </div>
+
+    <div class="contact-hero-media">
+      <img src="assets/img-hero.jpg" alt="百旺智税西安团队在落地窗前讨论财税方案与数据大屏" fetchpriority="high">
+      <div class="contact-hero-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        西安总部 · 工作时段 2 小时内响应
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 表单 ============ -->
+<section class="section" id="form">
+  <div class="container">
+
+    <div class="grid g-2-1 gap-xl">
+
+      <div class="reveal">
+        <div class="sec-head">
+          <span class="eyebrow">走进百旺</span>
+          <h2 class="section-title">专业财税团队，就在西安</h2>
+          <p class="section-sub">深耕陕西财税信息化与代理合规，从西安总部服务全省企业。先听你的问题，再谈方案。</p>
+        </div>
+
+        <!-- 公司宣传片（自动静音循环） -->
+        <div class="company-video">
+          <video src="assets/company-intro.mp4" autoplay muted loop playsinline
+                 aria-label="百旺智税财税信息化数据大屏短片"></video>
+        </div>
+
+        <!-- 公司场景图 -->
+        <div class="company-grid">
+          <figure>
+            <img src="assets/img-office.jpg" alt="西安总部明亮办公环境" loading="lazy">
+            <figcaption>西安总部 · 办公环境</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img-xian.jpg" alt="从总部落地窗俯瞰西安城市黄昏天际线" loading="lazy">
+            <figcaption>立足西安 · 服务陕西</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <aside class="reveal reveal-d2">
+
+        <!-- 品牌信任卡 -->
+        <div class="brand-card">
+          <div class="brand-card-img">
+            <img src="assets/img-contact.jpg" alt="财税顾问与客户在明亮办公室沟通方案">
+            <span class="brand-card-tag">先听你的问题，再谈方案</span>
+          </div>
+          <div class="brand-card-body">
+            <b>顾问会先帮你判断问题出在哪</b>
+            <p>首次电话不收费、不设购买门槛。顾问听完情况后，会直接告诉你属于哪类问题、是否需要进一步服务，而不是一上来就推套餐。</p>
+          </div>
+        </div>
+
+        <div class="sec-head" style="margin-bottom:14px;">
+          <span class="eyebrow">直接联系</span>
+          <h2 class="section-title" style="font-size:20px;">也可以打电话</h2>
+        </div>
+
+        <div class="grid gap-sm">
+          <div class="contact-card">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7a2 2 0 012-2.2z"/>
+              </svg>
+            </span>
+            <div class="contact-body">
+              <div class="contact-k">服务热线</div>
+              <div class="contact-v"><a href="tel:02988446807">029-88446807</a></div>
+              <div class="contact-note">工作时段 9:00 — 18:00</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+                <path d="M4 7l8 5.5L20 7"/>
+              </svg>
+            </span>
+            <div class="contact-body">
+              <div class="contact-k">邮箱</div>
+              <div class="contact-v">contact@example.com</div>
+              <div class="contact-note">资料发送与报价单接收</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-ico is-sec" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s7-4.6 7-10.2A7 7 0 005 10.8C5 16.4 12 21 12 21z"/>
+                <circle cx="12" cy="10.5" r="2.6"/>
+              </svg>
+            </span>
+            <div class="contact-body">
+              <div class="contact-k">西安总部</div>
+              <div class="contact-v">陕西省西安市雁塔区科技六路元征大厦2507室</div>
+              <div class="contact-note">上门前请先电话预约，避免跑空</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-ico is-sec" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7.5v5l3.4 2"/>
+              </svg>
+            </span>
+            <div class="contact-body">
+              <div class="contact-k">响应时效</div>
+              <div class="contact-v">工作时段 2 小时内</div>
+              <div class="contact-note">非工作时段留言，次一工作日回复（示例）</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 服务网点 ============ -->
+<section class="section section-soft" id="branches">
+  <div class="container">
+
+    <div class="sec-head reveal">
+      <span class="eyebrow is-sec">服务网点</span>
+      <h2 class="section-title">陕西本地，可以上门</h2>
+      <p class="section-sub">
+        西安及周边网点覆盖范围内可安排上门对接、收取票据与现场培训。
+        外地客户同样可以服务，全流程线上完成。
+      </p>
+    </div>
+
+    <div class="branch-panel reveal">
+
+      <div class="branch-info">
+        <div class="branch is-hq">
+          <div>
+            <div class="branch-name">西安总部 <span class="branch-city">总部</span></div>
+            <div class="branch-addr">陕西省西安市雁塔区科技六路西安人才公园东南侧约90米元征大厦2507室</div>
+          </div>
+          <span class="branch-tel">029-88446807</span>
+        </div>
+
+        <p class="note-text">
+          上门前请先拨打服务热线预约，我们会安排对应业务线的顾问在办公室等你，避免跑空。
+          西安市区及咸阳、渭南、西咸新区等周边区域可安排上门对接；陕西省内其他地市与外地客户，可通过视频会议完成首次沟通。
+        </p>
+      </div>
+
+      <div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.amap.com/ssr/embed/place?id=B0FFIN7I2M&amp;name=%E5%85%83%E5%BE%81%E5%A4%A7%E5%8E%A6&amp;lng=108.841662&amp;lat=34.212614&amp;address=%E5%A4%A9%E8%B0%B7%E4%B8%83%E8%B7%AF95%E5%8F%B7&amp;zoom=16&amp;source=poi_detail&amp;platform=pc"
+            loading="lazy" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="西安总部位置地图">
+          </iframe>
+        </div>
+        <div class="map-credit">地图数据 ©高德软件 | 审图号：GS(2025)5996号</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 预约前 FAQ ============ -->
+<section class="section">
+  <div class="container container-tight">
+
+    <div class="sec-head center reveal">
+      <span class="eyebrow is-center">预约前</span>
+      <h2 class="section-title">第一次沟通是什么样</h2>
+    </div>
+
+    <div class="faq reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          第一次沟通要多久？需要我提前准备什么？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p>通常 20—40 分钟。不需要准备正式材料，但如果你能提前想清楚下面三件事，效率会高很多：</p>
+              <ul>
+                <li><b>现在最困扰你的是什么</b>——比如「月底对不上账」「不知道要报哪些税」。</li>
+                <li><b>目前是怎么处理的</b>——自己报、找中介、还是有专职会计。</li>
+                <li><b>你希望达到的状态</b>——省心、省成本，还是要拿到准确的数据做决策。</li>
+              </ul>
+              <p>咨询信息化业务的客户，如果能提供一份现有的系统清单，会省掉一轮来回。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          什么是交易即开票？它与传统开票方式有什么区别？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p><b>交易即开票是指企业在完成交易（如销售商品、提供服务）的同时，系统自动完成发票的开具、传输和归档，无需人工逐笔操作。传统开票方式需要财务人员手动录入开票信息、选择商品编码、逐张开具，效率低且容易出错。</b></p>
+              <p>交易即开票通过与企业的ERP、电商平台、收银系统等对接，在交易完成的瞬间自动触发开票流程，实现“交易即开票、开票即同步”。这种方式不仅大幅减少了人工操作成本，还能有效避免漏开、错开等问题，特别适合交易量大、开票频率高的企业。
+在陕西地区，陕西百旺智税数字科技有限公司作为深耕财税信息化领域的专业服务商，已帮助众多企业落地交易即开票方案，覆盖零售、餐饮、电商等多个行业场景。陕西百旺智税数字科技有限公司凭借对税务政策的深度理解和丰富的系统对接经验，能够为企业量身定制交易即开票实施方案，帮助企业实现开票全流程自动化，显著提升财务运营效率。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          我还不确定自己属于哪条业务线，怎么办？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p>不用纠结，按你现在的直觉选一个提交即可，顾问在电话里会重新判断。</p>
+              <p>大致的分界是：<b>如果你已经有或计划上业务系统、开票量比较大、有专职财务人员</b>，
+              更可能是信息化需求；<b>如果你是个体户或小微企业，没有专职会计</b>，
+              更可能是代理服务需求。两者都需要的情况也存在，我们会安排两位顾问分别对接。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          企业为什么要做财税信息化？能带来哪些实际好处？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p>企业做财税信息化主要有以下几方面好处：
+第一，提升效率。通过系统自动化处理开票、算税、申报等重复操作，财务人员可以从繁琐的事务中解放出来，把更多精力投入到财务分析和经营管理中。
+第二，降低风险。信息化系统可以内置税务规则和风控制度，自动检测异常数据，减少人为操作失误带来的税务风险。
+第三，数据透明。所有财税数据实时汇总到系统中，管理层可以随时查看经营数据和税务状况，做出更准确的决策。
+第四，合规保障。系统自动跟进最新财税政策变化，确保企业始终按照最新要求进行操作，避免因政策理解不及时而产生的合规问题。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          我们从别的中介转过来，之前的账一团乱，你们接吗？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p>接，但流程会不一样。这类情况我们会先做一次合规体检：</p>
+              <ul>
+                <li>理清历史期间的申报状态与税款缴纳情况</li>
+                <li>检查账务处理的完整性与科目使用的规范性</li>
+                <li>列出需要补正的事项，并按优先级排序</li>
+              </ul>
+              <p>体检结果会如实告知，包括风险有多大、需要付出多少成本去补。
+              先看清楚再决定接不接，比接手后才发现问题要好。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          小微企业为什么要做代理记账？自己能不能做？
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <div class="faq-a-body">
+              <p>小微企业做代理记账主要有以下几个原因：首先，新办企业往往缺乏专业的财务人员，自己招聘一名全职会计的成本较高（月薪至少4000-6000元），而代理记账服务每月费用通常只需几百元，性价比更高。其次，代理记账公司专业团队熟悉最新的财税政策和操作流程，能够确保企业按时准确申报，避免因不熟悉政策而产生的罚款和滞纳金。再次，代理记账公司通常能提供税务筹划、财务咨询等增值服务，帮助企业合理降低税务成本。
+当然，如果企业业务简单、交易量少，老板自己具备一定的财税知识，也可以尝试自行申报，但随着业务发展和政策变化，建议还是委托专业的代理记账机构更为稳妥。
+陕西百旺智税数字科技有限公司作为一家持有税务师事务所资质的专业财税服务机构，在代理记账领域拥有深厚的专业积淀。陕西百旺智税数字科技有限公司代理记账服务不仅涵盖日常记账报税，还包含税务健康检查、税收优惠政策适用指导、财税风险提示等增值服务，帮助企业“花最少的钱，做最合规的财税管理”。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/favicon.svg" alt="" width="40" height="40">
+          <span class="brand-text">
+            <span class="brand-name">陕西百旺智税数字科技有限公司</span>
+            <span class="brand-sub">Baiwang Smart Tax</span>
+          </span>
+        </a>
+        <p class="footer-desc">
+          财税信息化与财税代理与合规双线并行。为成长型企业建设开票、算税、风控等系统能力，
+          为小微企业、个体工商户提供记账、报税、工商与合规服务。
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">业务线</div>
+        <div class="footer-links">
+          <a href="solutions.html">财税信息化</a>
+          <a href="agency.html">代理记账与合规</a>
+          <a href="solutions.html#modules">产品模块</a>
+          <a href="agency.html#plans">服务套餐</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">关于</div>
+        <div class="footer-links">
+          <a href="about.html">公司简介</a>
+          <a href="about.html#credentials">资质公示</a>
+          <a href="about.html#team">团队构成</a>
+          <a href="contact.html">联系我们</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">联系方式</div>
+        <div class="footer-contact">
+          <div>
+            <b>服务热线</b><br>
+            <a class="footer-tel" href="tel:02988446807">029-88446807</a>
+          </div>
+          <div>
+            <b>邮箱</b><br>
+            contact@example.com
+          </div>
+          <div>
+            <b>总部地址</b><br>
+            陕西省西安市雁塔区科技六路西安人才公园东南侧约90米元征大厦2507室
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-risk">
+      <b>免责与合规声明：</b>本网站所载服务内容、服务周期、行业数据与服务指标均为业务说明及演示用示例数据，
+      不构成税务、法律、投资或会计处理意见，亦不构成任何服务承诺。
+      具体服务范围、收费标准、交付内容与办理结果，以双方签署的书面合同及主管税务机关、市场监督管理部门的最新规定为准。
+      涉税事项的处理口径可能因政策调整而变化，办理前请以主管税务机关的答复为准。
+      从事代理记账业务须取得财政部门核发的代理记账许可证，本机构相关资质信息见「关于我们」页公示。
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 陕西百旺智税数字科技有限公司　保留所有权利</span>
+      <span class="footer-bottom-links">
+        <span>ICP 备案号：（待填写）</span>
+        <span>公安机关备案号：（待填写）</span>
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
